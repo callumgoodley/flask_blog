@@ -6,7 +6,7 @@ from application.forms import PostForm
 @app.route('/')
 @app.route('/home')
 def home():
-    postData = Posts.query.first()
+    postData = Posts.query.all()
     return render_template('home.html', title='Home', post=postData)
 
 @app.route('/about')
