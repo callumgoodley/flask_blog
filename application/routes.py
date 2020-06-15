@@ -11,10 +11,13 @@ def home():
     postData = Posts.query.all()
     return render_template('home.html', title='Home', posts=postData)
 
-
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')
+
+@app.route('/about/<word>')
+def about_word(word):
+    return word
 
 
 @app.route('/register', methods = ['GET', 'POST'])
